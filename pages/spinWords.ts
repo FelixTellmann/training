@@ -1,0 +1,1 @@
+export const spinWords = (input) => input.split(' ').map((w: string) => w.length >= 5 ? w.split('').reverse().join('') : w).join(' ');

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
+  font-size: 10px;
+  /*font-size: 62.5%;*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1 {
+  font-size: 4.2rem;
+}
+
+h2 {
+  z-index: 0;
+  font-size: 4rem;
+  
+  strong {
+    position: relative;
+    display: inline-block;
+    
+    &:before {
+      position: absolute;
+      content: '';
+      z-index: -1;
+      bottom: 3px;
+      left: 50%;
+      width: 110%;
+      height: 6px;
+      background-color: orange;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+h3 {
+  font-size: 2.8rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+blockquote {
+  position: relative;
+  margin: 40px 0;
+  padding: 0;
+  font-size: 1.6rem;
+  font-style: italic;
+  
+  &:before {
+    position: absolute;
+    content: '“';
+    bottom: 105%;
+    left: 0;
+    font-size: 40px;
+    line-height: 0;
+  }
+  
+  &:after {
+    position: absolute;
+    content: '”';
+    top: 105%;
+    left: 0;
+    font-size: 40px;
+    line-height: 1;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid orange;
+  border-radius: 30px;
+  color: orange;
+  line-height: 1;
+  text-decoration: none;
+  transition: 0.1s;
+  
+  &:hover, &:focus, &:active {
+    color: white;
+    background-color: orange;
+    border-color: white;
+  }
+  
+  &--inverted {
+    color: white;
+    border-color: white;
+    &:hover, &:focus, &:active {
+      color: orange;
+      background-color: white;
+      border-color: orange;
+    }
+  }
+}

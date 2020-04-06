@@ -1,0 +1,164 @@
+:root {
+  --content-max-width: 1200px;
+  --section-content-max-width: 900px;
+}
+
+.layout {
+  position: relative;
+  z-index: 0;
+}
+
+.header {
+  position: absolute;
+  z-index: 10;
+  top: 90px;
+  left: 50%;
+  width: 100%;
+  max-width: var(--content-max-width);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translateX(-50%);
+  
+  .logo {
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: block;
+  }
+  
+  .nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+    .nav__link {
+      padding: 1.6rem;
+      color: rgba(80, 80, 80, 1);
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+      
+      &--call-to-action {
+        color: orange;
+      }
+      
+      &:hover, &:focus, &:active {
+        color: orange;
+      }
+    }
+  }
+}
+
+.section {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 200px calc((100% - var(--section-content-max-width)) / 2);
+  grid-gap: 60px;
+  
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 50%;
+    width: calc(var(--content-max-width) + 90px);
+    height: 100%;
+    margin: 45px 0 0;
+    transform: translateX(-50%);
+  }
+  
+  &:after {
+    position: absolute;
+    content: '';
+    z-index: 1;
+    right: 33vw;
+    bottom: -65px;
+    width: 40px;
+    height: 40px;
+    backface-visibility: hidden;
+  }
+  
+  &--hero {
+    background: url("/r2d2.jpg") no-repeat top center fixed;
+    background-size: contain;
+    
+    &:before {
+      background-color: rgba(#051287, 0.4);
+    }
+    
+    &:after {
+      background-color: white;
+      background-image: repeating-linear-gradient(90deg, white 0px, white 20px, rgba(#051287, 0.4) 20px, rgba(#051287, 0.4) 40px);
+    }
+  }
+  
+  &--process {
+    &:before {
+      background-color: rgba(#808080, 0.1);
+    }
+    
+    &:after {
+      left: 30vw;
+      top: 25px;
+      background-color: white;
+      background-image: repeating-linear-gradient(90deg, white 0px, white 20px, rgba(#808080, 0.1) 20px, rgba(#808080, 0.1) 40px);
+    }
+  }
+  
+  .section__title {
+    position: relative;
+    z-index: 1;
+    
+    &--hero {
+      grid-column: 2 / 4;
+      color: white;
+    }
+    
+    &--annotation {
+      grid-column: 1 / 2;
+    }
+  }
+  
+  .section__content {
+    grid-column: 2 / 4;
+  }
+}
+
+.block {
+  display: grid;
+  
+  &--grid-2 {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 45px;
+  }
+  
+  &--ol {
+    display: block;
+    counter-reset: counter;
+    padding: 0;
+    margin: 0;
+    
+    .block__item {
+      position: relative;
+      display: block;
+      counter-increment: counter;
+      
+      &:before {
+        position: absolute;
+        content: counter(counter);
+        color: orange;
+        font-weight: 700;
+        top: -15px;
+        left: -45px;
+        font-size: 4.6rem;
+      }
+    }
+  }
+  
+  .block__item__img {
+    max-width: 100%;
+    height: 85px;
+  }
+}
