@@ -37,8 +37,11 @@ import {square_sums_row} from './squareSums';
 
 
 describe('square_sums_row()', function () {
+
+
   test('square_sums_row(15)', ()=> {
-    expect(square_sums_row(15)).toBe([ 9, 7, 2, 14, 11, 5, 4, 12, 13, 3, 6, 10, 15, 1, 8 ])
+
+    expect(square_sums_row(16)).toEqual([ 16, 9, 7, 2, 14, 11, 5, 4, 12, 13, 3, 6, 10, 15, 1, 8 ])
     
   }); 
   
