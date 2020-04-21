@@ -16,15 +16,15 @@ Life without primes
 Please also try the performance version of this kata at Upside down numbers - Challenge Edition
 * */
 
-import { solve } from './upsideDownNumbers';
+import { upsideDown } from './upsideDownNumbers2';
 
 describe('solve()', function () {
   test('solve(60796, 130366),53)', () => {
-    expect(solve(15, 886403)).toBe(959);
+    expect(upsideDown(9061881960961881906, 10000000 , false)).toBe(959);
   });
   /*test('solve(10,100),3)', () => {
     expect(solve(10, 100)).toBe(4);
-  });*/
+  }); 548, 96829 38, 898346 */
   /*test('solve(1000,1000),3)', () => {
     expect(solve(1000, 1000)).toBe(20);
   });
